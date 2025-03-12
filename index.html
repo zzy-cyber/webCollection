@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网址导航</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 左侧导航栏 -->
+        <aside class="sidebar">
+            <h2>分类导航</h2>
+            <ul class="category-list" id="categoryList">
+                <li class="category-item active" data-category="常用">
+                    <span>常用</span>
+                    <button class="edit-btn">编辑</button>
+                </li>
+            </ul>
+            <button class="add-category-btn" id="addCategoryBtn">+ 添加新分类</button>
+        </aside>
+
+        <!-- 右侧内容区 -->
+        <main class="main-content">
+            <div class="header">
+                <h1>我的导航</h1>
+                <button class="add-site-btn" id="addSiteBtn">+ 添加网站</button>
+            </div>
+            <div class="sites-grid" id="sitesGrid"></div>
+        </main>
+    </div>
+
+    <!-- 添加网站模态框 -->
+    <div class="modal" id="addSiteModal">
+        <div class="modal-content">
+            <h2>添加网站</h2>
+            <form id="addSiteForm">
+                <div class="form-group">
+                    <label for="siteName">网站名称</label>
+                    <input type="text" id="siteName" required>
+                </div>
+                <div class="form-group">
+                    <label for="siteUrl">网站地址</label>
+                    <input type="url" id="siteUrl" required>
+                </div>
+                <div class="form-group">
+                    <label for="siteCategory">所属分类</label>
+                    <select id="siteCategory"></select>
+                </div>
+                <div class="form-buttons">
+                    <button type="submit">保存</button>
+                    <button type="button" class="cancel-btn">取消</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 添加分类模态框 -->
+    <div class="modal" id="addCategoryModal">
+        <div class="modal-content">
+            <h2>添加分类</h2>
+            <form id="addCategoryForm">
+                <div class="form-group">
+                    <label for="categoryName">分类名称</label>
+                    <input type="text" id="categoryName" required>
+                </div>
+                <div class="form-buttons">
+                    <button type="submit">保存</button>
+                    <button type="button" class="cancel-btn">取消</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

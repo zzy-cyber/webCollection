@@ -1,0 +1,342 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* 侧边栏样式 */
+.sidebar {
+    width: 250px;
+    background-color: #2d2d2d;
+    padding: 20px;
+    border-right: 1px solid #3d3d3d;
+}
+
+.sidebar h2 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    color: #fff;
+}
+
+.category-list {
+    list-style: none;
+}
+
+.category-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.category-item:hover {
+    background-color: #3d3d3d;
+}
+
+.category-item.active {
+    background-color: #4a4a4a;
+}
+
+.edit-btn {
+    padding: 4px 8px;
+    background-color: transparent;
+    border: 1px solid #666;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+    opacity: 0;
+}
+
+.category-item:hover .edit-btn {
+    opacity: 1;
+}
+
+.edit-btn:hover {
+    background-color: #666;
+}
+
+.add-category-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #404040;
+    border: none;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.add-category-btn:hover {
+    background-color: #505050;
+}
+
+/* 主内容区样式 */
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 2em;
+    color: #fff;
+}
+
+.add-site-btn {
+    padding: 10px 20px;
+    background-color: #2196f3;
+    border: none;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-site-btn:hover {
+    background-color: #1976d2;
+}
+
+/* 网站卡片网格 */
+.sites-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.site-card {
+    position: relative;
+    aspect-ratio: 1;
+    background-color: #2d2d2d;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.site-card:hover {
+    transform: translateY(-5px);
+    background-color: #3d3d3d;
+}
+
+.site-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.site-name {
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+    word-break: break-word;
+    max-width: 100%;
+}
+
+.delete-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s, background-color 0.3s;
+}
+
+.site-card:hover .delete-btn {
+    opacity: 1;
+}
+
+.delete-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* 模态框样式 */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: #2d2d2d;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    background-color: #404040;
+    border: 1px solid #505050;
+    border-radius: 6px;
+    color: #fff;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #2196f3;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.form-buttons button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-buttons button[type="submit"] {
+    background-color: #2196f3;
+    color: #fff;
+}
+
+.form-buttons button[type="submit"]:hover {
+    background-color: #1976d2;
+}
+
+.form-buttons .cancel-btn {
+    background-color: #404040;
+    color: #fff;
+}
+
+.form-buttons .cancel-btn:hover {
+    background-color: #505050;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #3d3d3d;
+    }
+
+    .sites-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+}
+
+.category-buttons {
+    display: flex;
+    gap: 4px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.category-item:hover .category-buttons {
+    opacity: 1;
+}
+
+.delete-category-btn {
+    padding: 4px 8px;
+    background-color: #ff4444;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.delete-category-btn:hover {
+    background-color: #ff6666;
+}
+
+.add-to-common-btn {
+    position: absolute;
+    top: 8px;
+    right: 40px;
+    background: none;
+    border: none;
+    color: #666;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.site-card:hover .add-to-common-btn {
+    opacity: 1;
+}
+
+.add-to-common-btn:hover {
+    color: #ffd700;
+}
